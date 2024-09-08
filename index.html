@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mayank Nichlani's Portfolio</title>
+    <link rel = "stylesheet" href="style.css">
+</head>
+<body>
+    <div id="header">
+        <div class="container">
+            <nav>
+                <!-- <img src = "personal-portfolio-img/images/MayankNichlaniLogo21.png" class = "logo"> -->
+                 <div></div>
+                <ul>
+                    <li><a href = "#">Home</a></li>
+                    <li><a href = "#">About</a></li>
+                    <li><a href = "#">Services</a></li>
+                    <li><a href = "#">Portfolio</a></li>
+                    <li><a href = "#">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-text">
+                <p>FullStack Developer</p>
+                <h1>Hi,I am <span>Mayank Nichlani</span></h1>
+            </div>
+        </div>
+    </div>
+    <!-- About -->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <img src = "personal-portfolio-img/images/me.jpg">
+                </div>
+                <div class="about-col-2">
+                    <h1 class = "sub-title">About Me:</h1>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                         Nisi blanditiis, perspiciatis distinctio modi deserunt, doloremque, 
+                        maiores fuga dolores dolore ex consequuntur repellendus assumenda culpa et 
+                        at quibusdam recusandae? Adipisci, ducimus!</p>
+                        <div class="tab-titles">
+                            <p class = "tab-links active-link" onclick="opentab('skills')">Skills</p>
+                            <p class = "tab-links" onclick="opentab('experience')">Experience</p>
+                            <p class = "tab-links" onclick="opentab('education')">Education</p>
+                        </div>
+                        <div class="tab-contents active-tab" id = "skills">
+                            <ul>
+                                <li><span>Programming Languages:</span> Java,C,Python,C++ and JavaScript</li>
+                                <li><span>Web Development:</span>Made Projects Like: Portfolio website,Attendance Management System</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id = "experience">
+                            <ul>
+                                <li><span>LeetCode Problem Statement Reviewer</span>Reviewed potential problems for the upcomming month</li>
+                            </ul>
+                        </div>
+                        <div class="tab-contents" id = "education">
+                            <ul>
+                                <li><span>X:</span>91.2%</li>
+                                <li><span>XII:</span>77%</li>
+                            </ul>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- contact -->
+     <div id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact-left">
+                    <h1 class = "sub-title">Contact Me:</h1>
+                    <p>mayanknichlani12345@gmail.com</p>
+                    <p>8308706666</p>
+                    <div class="social-icons">
+                        <a href = "https://www.linkedin.com/in/mayanknichlani/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href = "https://github.com/mayanknichlani"><i class="fa-brands fa-github"></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+
+                </div>
+            </div>
+        </div>
+     </div>
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links")
+        var tabcontents = document.getElementsByClassName("tab-contents")
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+    </script>
+</body>
+</html>
