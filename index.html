@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mayank Nichlani's Portfolio</title>
     <link rel = "stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div id="header">
@@ -13,11 +14,11 @@
                 <!-- <img src = "personal-portfolio-img/images/MayankNichlaniLogo21.png" class = "logo"> -->
                  <div></div>
                 <ul>
-                    <li><a href = "#">Home</a></li>
-                    <li><a href = "#">About</a></li>
-                    <li><a href = "#">Services</a></li>
-                    <li><a href = "#">Portfolio</a></li>
-                    <li><a href = "#">Contact</a></li>
+                    <li><a href = "#header">Home</a></li>
+                    <li><a href = "#about">About</a></li>
+                    <!-- <li><a href = "#">Services</a></li>
+                    <li><a href = "#">Portfolio</a></li> -->
+                    <li><a href = "#contact">Contact</a></li>
                 </ul>
             </nav>
             <div class="header-text">
@@ -35,10 +36,16 @@
                 </div>
                 <div class="about-col-2">
                     <h1 class = "sub-title">About Me:</h1>
-                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                         Nisi blanditiis, perspiciatis distinctio modi deserunt, doloremque, 
-                        maiores fuga dolores dolore ex consequuntur repellendus assumenda culpa et 
-                        at quibusdam recusandae? Adipisci, ducimus!</p>
+                    <p>
+                        I am a passionate and driven student at Sardar Patel Institute of Technology, 
+                        Mumbai, currently pursuing a degree in computer science. 
+                        With a solid foundation in programming languages like Java, C++, 
+                        JavaScript, and Python, and hands-on experience with frameworks such as React, Node.js, and Express,
+                         I specialize in web development and machine learning. My projects, like EduPulse, FlashCard, and Codefolio,
+                          reflect my commitment to solving real-world problems with technology. I have excelled in 
+                          coding competitions on platforms like Codeforces and LeetCode, and I continuously aim to sharpen my skills 
+                          in software development and data science.
+                    </p>
                         <div class="tab-titles">
                             <p class = "tab-links active-link" onclick="opentab('skills')">Skills</p>
                             <p class = "tab-links" onclick="opentab('experience')">Experience</p>
@@ -71,32 +78,71 @@
             <div class="row">
                 <div class="contact-left">
                     <h1 class = "sub-title">Contact Me:</h1>
-                    <p>mayanknichlani12345@gmail.com</p>
-                    <p>8308706666</p>
+                    <p> <i class="fa-solid fa-paper-plane"></i> mayanknichlani12345@gmail.com</p>
+                    <p> <i class="fa-solid fa-phone"></i> 8308706666</p>
                     <div class="social-icons">
                         <a href = "https://www.linkedin.com/in/mayanknichlani/"><i class="fa-brands fa-linkedin"></i></a>
                         <a href = "https://github.com/mayanknichlani"><i class="fa-brands fa-github"></i></a>
                     </div>
+                    <a href="2022700035_MayankNichlani2.pdf" download="Mayank_Nichlani_Resume.pdf">
+                        <button>Download Resume</button>
+                    </a>                    
                 </div>
                 <div class="contact-right">
-
+                    <form name = "submit-to-google-sheet">
+                        <input type = "text" name = "Name" placeholder="Your Name" required>
+                        <input type = "email" name = "Email" placeholder="Your Email" required>
+                        <textarea name = "Message" rows = "6" placeholder="Your Message"></textarea>
+                        <button type = "submit">Submit</button>
+                    </form>
+                    <span id = "msg"></span>
                 </div>
             </div>
         </div>
      </div>
     <script>
-        var tablinks = document.getElementsByClassName("tab-links")
-        var tabcontents = document.getElementsByClassName("tab-contents")
-        function opentab(tabname){
-            for(tablink of tablinks){
-                tablink.classList.remove("active-link");
-            }
-            for(tabcontent of tabcontents){
-                tabcontent.classList.remove("active-tab");
-            }
-            event.currentTarget.classList.add("active-link");
-            document.getElementById(tabname).classList.add("active-tab");
-        }
+       var tablinks = document.getElementsByClassName("tab-links");
+var tabcontents = document.getElementsByClassName("tab-contents");
+
+function opentab(tabname) {
+    for (let tablink of tablinks) {
+        tablink.classList.remove("active-link");
+    }
+    for (let tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+    }
+    event.currentTarget.classList.add("active-link");
+    document.getElementById(tabname).classList.add("active-tab");
+}
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycby5CKWzCm5deeTu_1kTjqNmVhiYhPEyDbulZ9HqTodGRAasAMHlsTYF_TbClYUmrB6p/exec';
+const form = document.forms['submit-to-google-sheet'];
+const msg = document.getElementById("msg");
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    fetch(scriptURL, { 
+        method: 'POST', 
+        body: new FormData(form)
+    })
+    .then(response => {
+        msg.innerHTML = "Your response has been submitted successfully";
+        
+        // Clear the message after 3 seconds
+        setTimeout(function() {
+            msg.innerHTML = "";
+        }, 3000);
+
+        // Reset the form after submission
+        form.reset();
+    })
+    .catch(error => {
+        msg.innerHTML = "Error! Submission failed.";
+        console.error('Error!', error.message);
+    });
+});
+
     </script>
 </body>
 </html>
