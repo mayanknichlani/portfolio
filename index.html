@@ -128,14 +128,13 @@ form.addEventListener('submit', e => {
     })
     .then(response => {
         msg.innerHTML = "Your response has been submitted successfully";
-        
+        form.reset();
         // Clear the message after 3 seconds
         setTimeout(function() {
             msg.innerHTML = "";
         }, 3000);
 
         // Reset the form after submission
-        form.reset();
     })
     .catch(error => {
         msg.innerHTML = "Error! Submission failed.";
