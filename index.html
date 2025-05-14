@@ -18,6 +18,7 @@
                     <li><a href = "#about">About</a></li>
                     <!-- <li><a href = "#">Services</a></li>
                     <li><a href = "#">Portfolio</a></li> -->
+                    <li><a href="#achievements">Achievements</a></li>
                     <li><a href = "#contact">Contact</a></li>
                 </ul>
             </nav>
@@ -72,6 +73,82 @@
             </div>
         </div>
     </div>
+    <!-- Achievements -->
+<div id="achievements">
+    <div class="container">
+        <h1 class="sub-title">Achievements & Coding Profiles</h1>
+        <div class="row">
+            <div class="achievements-col">
+                <div class="achievement-card" id="leetcode-card">
+                    <i class="fa-solid fa-code"></i>
+                    <h2>LeetCode</h2>
+                    <div class="loading-spinner" id="leetcode-loading">
+                        <div class="spinner"></div>
+                        <p>Fetching data...</p>
+                    </div>
+                    <div class="profile-data" id="leetcode-data" style="display: none;">
+                        <p>Current Rating: <span id="leetcode-rating">--</span></p>
+                        <p>Max Rating: <span id="leetcode-max-rating">--</span></p>
+                        <p>Rank: <span id="leetcode-rank">--</span></p>
+                        <p>Best Contest Rank: <span id="leetcode-best-rank">--</span></p>
+                        <p>Problems Solved: <span id="leetcode-solved">--</span></p>
+                    </div>
+                    <div class="error-message" id="leetcode-error" style="display: none;">
+                        <p>Could not fetch LeetCode data. Please try again later.</p>
+                    </div>
+                    <a href="https://leetcode.com/u/mayanknichlani/" target="_blank" class="profile-link">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i> View Profile
+                    </a>
+                </div>
+            </div>
+            <div class="achievements-col">
+                <div class="achievement-card" id="codeforces-card">
+                    <i class="fa-solid fa-trophy"></i>
+                    <h2>Codeforces</h2>
+                    <div class="loading-spinner" id="codeforces-loading">
+                        <div class="spinner"></div>
+                        <p>Fetching data...</p>
+                    </div>
+                    <div class="profile-data" id="codeforces-practice-data" style="display: none;">
+                        <h3>Practice Account</h3>
+                        <p>Current Rating: <span id="codeforces-practice-rating">--</span></p>
+                        <p>Max Rating: <span id="codeforces-practice-max-rating">--</span></p>
+                        <p>Rank: <span id="codeforces-practice-rank">--</span></p>
+                    </div>
+                    <div class="profile-data" id="codeforces-contest-data" style="display: none;">
+                        <h3>Contest Account</h3>
+                        <p>Current Rating: <span id="codeforces-contest-rating">--</span></p>
+                        <p>Max Rating: <span id="codeforces-contest-max-rating">--</span></p>
+                        <p>Rank: <span id="codeforces-contest-rank">--</span></p>
+                    </div>
+                    <div class="error-message" id="codeforces-error" style="display: none;">
+                        <p>Could not fetch Codeforces data. Please try again later.</p>
+                    </div>
+                    <div class="profile-links">
+                        <a href="https://codeforces.com/profile/mayank.nichlani22" target="_blank" class="profile-link">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Practice Account
+                        </a>
+                        <a href="https://codeforces.com/profile/unknowncoder2805" target="_blank" class="profile-link">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i> Contest Account
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="achievements-col">
+                <div class="achievement-card">
+                    <i class="fa-solid fa-award"></i>
+                    <h2>Competitions & Awards</h2>
+                    <ul class="achievements-list">
+                        <li><span>LeetCode Problem Statement Reviewer</span> - Reviewed potential problems for upcoming contests</li>
+                        <li><span>Competitive Programming</span> - Ranked in top 10% in multiple coding competitions</li>
+                        <li><span>Hackathons</span> - Participated in college-level hackathons</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
     <!-- contact -->
      <div id="contact">
         <div class="container">
@@ -100,6 +177,7 @@
             </div>
         </div>
      </div>
+     <script src="coding-profiles.js"></script>
     <script>
        var tablinks = document.getElementsByClassName("tab-links");
 var tabcontents = document.getElementsByClassName("tab-contents");
